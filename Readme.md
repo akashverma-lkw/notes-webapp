@@ -81,13 +81,7 @@ cd backend
 npm install
 ```
 
-### Environment Variables (.env):
-PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-GOOGLE_CALLBACK_URL=http://localhost:5000/api/auth/google/callback
+### ADD Environment Variables (.env)
 
 ### Start the backend server:
 npm run dev
@@ -97,7 +91,7 @@ cd frontend
 npm install
 npm run dev
 
-### 🌐 Deployment
+### 🌐 FINAL STEP - Deployment
 
 ### 📄 License
 This project is licensed under the MIT License

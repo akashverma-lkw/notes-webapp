@@ -83,17 +83,17 @@ npm install
 
 ### ADD Environment Variables (.env)
 
-### Start the backend server:
-npm run dev
+## Start the backend server:
+- npm run dev
 
-### Frontend Setup
-cd frontend
-npm install
-npm run dev
+## Frontend Setup
+- cd frontend
+- npm install
+- npm run dev
 
-### 🌐 FINAL STEP - Deployment
+## 🌐 FINAL STEP - Deployment
 
-### 📄 License
-This project is licensed under the MIT License
+## 📄 License
+- This project is licensed under the MIT License
 
-### Crafted with ❤️ by Akash Verma
+## Crafted with ❤️ by Akash Verma

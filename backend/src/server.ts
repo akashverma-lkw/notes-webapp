@@ -14,7 +14,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4005;
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+	credentials: true,
+	methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+	allowedHeaders: ["Content-Type", "Authorization"]
+}));
 app.use(
   session({
     secret: "google_auth_secret",

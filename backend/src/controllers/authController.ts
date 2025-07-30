@@ -62,16 +62,16 @@ export const verifyOTP = async (req: Request, res: Response) => {
   return res.status(200).json({ message: "Login successful", token, user });
 };
 
-export const getMe = async (req: AuthRequest, res: Response) => {
+export const getMe = async (req: Request, res: Response) => {
   try {
-    if (!req.user || !req.user.id) {
+    const typedReq = req as AuthRequest;
+
+    if (!typedReq.user || !typedReq.user.id) {
       return res.status(401).json({ error: "Unauthorized" });
     }
 
-    const user = await User.findById(req.user.id).select("-password");
-    if (!user) {
-      return res.status(404).json({ error: "User not found" });
-    }
+    const user = await User.findById(typedReq.user.id).select("-password");
+    if (!user) return res.status(404).json({ error: "User not found" });
 
     res.status(200).json(user);
   } catch (error: any) {
@@ -79,7 +79,6 @@ export const getMe = async (req: AuthRequest, res: Response) => {
     res.status(500).json({ error: "Server error" });
   }
 };
-
 
 export const googleLogin = async (req: Request, res: Response) => {
   const { credential } = req.body;

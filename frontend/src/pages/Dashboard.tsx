@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
-import logo from "../assets/logo.png"; // Adjust if needed
+import logo from "../../public/assets/logo.png"; // Adjust if needed
 
 interface Note {
   _id: string;

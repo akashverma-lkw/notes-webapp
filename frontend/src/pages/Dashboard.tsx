@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
-import logo from "../../public/assets/logo.png"; // Adjust if needed
 
 interface Note {
   _id: string;
@@ -109,7 +108,7 @@ const Dashboard = () => {
       {/* Top bar */}
       <div className="flex justify-between items-center w-full max-w-md px-1 mb-6">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="App logo" className="w-9 h-9 object-contain" />
+          <img src="/assets/logo.png" alt="App logo" className="w-9 h-9 object-contain" />
           <span className="text-xl ml-8 font-semibold">Dashboard</span>
         </div>
         <button

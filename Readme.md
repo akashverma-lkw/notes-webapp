@@ -70,7 +70,7 @@ notes-app/
 
 ```bash
 git clone https://github.com/akashverma-lkw/notes-webapp.git
-cd notes-create-app
+cd notes-webapp
 ```
 ## Set Up the Backend
 - cd backend

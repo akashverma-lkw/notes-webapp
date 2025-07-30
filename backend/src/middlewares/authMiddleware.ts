@@ -1,9 +1,10 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import User from "../models/User";
+import type { UserDocument } from '../models/User';
 
 export interface AuthRequest extends Request {
-  user?: { id: string };
+  user?: UserDocument;
 }
 
 export const protect = async (

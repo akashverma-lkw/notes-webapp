@@ -3,14 +3,15 @@ import Note from "../models/Note";
 import { AuthRequest } from "../middlewares/authMiddleware";
 
 export const createNote = async (req: AuthRequest, res: Response) => {
+  const typedReq = req as AuthRequest;
   try {
     const { title } = req.body;
-    if (!req.user?.id) return res.status(401).json({ message: "Unauthorized" });
+    if (!typedReq.user) return res.status(401).json({ error: "Unauthorized" });
     if (!title) return res.status(400).json({ message: "Title is required" });
 
     const note = await Note.create({
-      title,
-      user: req.user.id,
+     title: typedReq.body.title,
+      user: typedReq.user._id,
     });
 
     res.status(201).json(note);

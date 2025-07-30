@@ -6,31 +6,19 @@ export interface AuthRequest extends Request {
   user?: UserDocument;
 }
 
-export const protect = async (
-  req: AuthRequest,
-  res: Response,
-  next: NextFunction
-) => {
-  let token;
+export const protect = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) return res.status(401).json({ error: "No token provided" });
 
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
-    try {
-      token = req.headers.authorization.split(" ")[1];
-      const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { id: string };
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { id: string };
+    const user = await User.findById(decoded.id);
 
-      const user = await User.findById(decoded.id).select("-password");
-      if (!user) return res.status(401).json({ message: "User not found" });
+    if (!user) return res.status(401).json({ error: "Invalid token" });
 
-      req.user = user;
-      next();
-    } catch (err: any) {
-      console.error("Auth error:", err.message);
-      res.status(401).json({ message: "Not authorized, token failed" });
-    }
-  } else {
-    res.status(401).json({ message: "Not authorized, no token" });
+    (req as AuthRequest).user = user;
+    next();
+  } catch (error) {
+    return res.status(401).json({ error: "Not authorized" });
   }
 };

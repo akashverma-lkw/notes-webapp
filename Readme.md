@@ -6,26 +6,26 @@
 <h1 align="center">📝 Notes Create App</h1>
 
 <p align="center">
-  A secure full-stack notes management application with Google Authentication, built using <strong>React.js(Typescript)</strong> + <strong>Tailwind CSS</strong> in frontend and <strong>Node.js</strong> + <strong>Express.js</strong> + <strong>MongoDB</strong> in backend. 
+  A secure full-stack notes management application with Google Authentication, built using <strong>React.js (TypeScript)</strong> + <strong>Tailwind CSS</strong> in frontend and <strong>Node.js</strong> + <strong>Express.js</strong> + <strong>MongoDB</strong> in backend. 
 </p>
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend ⚛️
+### ⚛️ Frontend
 - React.js
 - TypeScript
 - Tailwind CSS
 - React Router
-- JWT Auth Integration
+- JWT Authentication
 
-### Backend 🧩
+### 🧩 Backend
 - Node.js
 - Express.js
 - MongoDB + Mongoose
 - Passport.js (Google OAuth2)
-- JWT (Authentication)
+- JWT
 - dotenv
 
 ---
@@ -56,44 +56,64 @@ notes-app/
 ## 🔐 Features
 
 - 🔐 Google OAuth Login
-- ✍️ Create & Manage Notes (title only)
+- ✍️ Create & Manage Notes (title-only)
 - 🧾 View User Notes on Dashboard
 - 🗑️ Delete Notes Securely
-- 🔄 Fully Synced with MongoDB
+- 🔄 Real-Time Sync with MongoDB
 - 🎨 Elegant & Responsive UI
 
 ---
 
-## 🚀 Deployment Guide
+## 💻 How to Run Locally
 
-### Prerequisites
-
-- Node.js
-- MongoDB Atlas URI
-- Google Developer Credentials (Client ID, Secret)
-
----
-
-### 🔧 Backend Setup
+### 1️⃣ Clone the Repository
 
 ```bash
-cd backend
-npm install
+git clone https://github.com/akashverma-lkw/notes-webapp.git
+cd notes-create-app
 ```
+## Set Up the Backend
+- cd backend
+- npm install
 
-### ADD Environment Variables (.env)
+## Create a .env File with the Following:
+- PORT=your_port_number
+- MONGO_URI=your_mongodb_uri
+- GOOGLE_CLIENT_ID=your_google_client_id
+- GOOGLE_CLIENT_SECRET=your_google_client_secret
+- GOOGLE_CALLBACK_URL=your_google_callback
+- JWT_SECRET=your_jwt_secret
 
-## Start the backend server:
-- npm run dev
-
-## Frontend Setup
-- cd frontend
+## Set Up the Frontend
+- cd ../frontend
 - npm install
 - npm run dev
 
-## 🌐 FINAL STEP - Deployment
+## 🌐 Deployment Guide
+### 🛠 Platforms You Can Use
+- Frontend: Vercel or Netlify
+- Backend: Render or Railway
+
+## Build Commands Summary
+### Backend 
+cd backend >
+npm install >
+npm run dev
+
+### Frontend
+cd frontend >
+npm install >
+npm run dev
 
 ## 📄 License
-- This project is licensed under the MIT License
+- This project is licensed under the MIT License.
 
-## Crafted with ❤️ by Akash Verma
+## ✨ Crafted with Passion by Akash Verma
+ 
+> ✅ Make sure to replace:
+> - `your_mongodb_uri`
+> - `your_google_client_id`, `secret`
+> - GitHub repo link
+> - Deployment backend URL in `VITE_BACKEND_BASE_URL`
+
+Let me know if you want a `LICENSE.md` file or want to automate deployment with CI/CD setup too.

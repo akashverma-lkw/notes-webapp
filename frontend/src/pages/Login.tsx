@@ -57,7 +57,7 @@ const Login = () => {
           <img
             src="assets/top.png"
             alt="HD Logo"
-            className="absolute md:hidden mb-12 top-36 ml-36 w-[420px] h-auto"
+            className="absolute md:hidden mb-12 top-36 ml-32 w-[420px] h-auto"
           />
 
           {/* Desktop Logo */}

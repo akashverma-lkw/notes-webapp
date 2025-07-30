@@ -66,7 +66,7 @@ notes-app/
 
 ## 💻 How to Run Locally
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/akashverma-lkw/notes-webapp.git
@@ -110,7 +110,7 @@ npm run dev
 
 ## ✨ Crafted with Passion by Akash Verma
  
-> ✅ Make sure to replace:
+> Make sure to replace:
 > - `your_mongodb_uri`
 > - `your_google_client_id`, `secret`
 > - GitHub repo link

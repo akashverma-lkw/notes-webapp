@@ -6,7 +6,7 @@
 <h1 align="center">📝 Notes Create App</h1>
 
 <p align="center">
-  A secure full-stack notes management application with Google Authentication, built using <strong>React.js</strong> + <strong>Tailwind CSS</strong> in frontend and <strong>Node.js</strong> + <strong>Express.js</strong> + <strong>MongoDB</strong> in backend. 
+  A secure full-stack notes management application with Google Authentication, built using <strong>React.js(Typescript)</strong> + <strong>Tailwind CSS</strong> in frontend and <strong>Node.js</strong> + <strong>Express.js</strong> + <strong>MongoDB</strong> in backend. 
 </p>
 
 ---

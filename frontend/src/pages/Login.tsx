@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { GoogleLogin } from "@react-oauth/google";
 import { toast } from "react-hot-toast";
-import jwtDecode from "jwt-decode";
 
 const Login = () => {
   const [email, setEmail] = useState("");

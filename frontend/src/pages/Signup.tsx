@@ -54,7 +54,7 @@ const Signup = () => {
                     <img
                         src="/assets/top.png"
                         alt="HD Logo"
-                        className="absolute md:hidden mt-2 ml-32 w-[420px] h-auto"
+                        className="absolute md:hidden mt-2 ml-28 w-[420px] h-auto"
                     />
                 </div>
 

@@ -54,19 +54,19 @@ const Login = () => {
       <div className="w-full md:w-1/2 flex items-center justify-center">
         <form className="w-full max-w-[400px] px-4" onSubmit={handleSubmit}>
           {/* Mobile Logo */}
-         <div className="w-full md:w-1/2 flex flex-col px-4 md:px-8 py-10 relative">
-                    <img
-                        src="/assets/top.png"
-                        alt="HD Logo"
-                        className="absolute md:hidden mt-2 ml-32 w-[420px] h-auto"
-                    />
-                </div>
+          <div className="w-full md:w-1/2 flex flex-col px-4 md:px-8 py-10 relative">
+            <img
+              src="/assets/top.png"
+              alt="HD Logo"
+              className="absolute md:hidden mt-2 ml-28 w-[420px] h-auto"
+            />
+          </div>
 
-                <img
-                    src="/assets/top.png"
-                    alt="HD Logo"
-                    className="hidden md:block absolute top-6 left-8 w-54 h-auto"
-                />
+          <img
+            src="/assets/top.png"
+            alt="HD Logo"
+            className="hidden md:block absolute top-6 left-8 w-54 h-auto"
+          />
 
           <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center md:text-left">
             Sign in

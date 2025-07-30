@@ -55,14 +55,14 @@ const Login = () => {
         <form className="w-full max-w-[400px] px-4" onSubmit={handleSubmit}>
           {/* Mobile Logo */}
           <img
-            src="/src/assets/top.png"
+            src="assets/top.png"
             alt="HD Logo"
             className="absolute md:hidden mb-12 top-36 ml-36 w-[420px] h-auto"
           />
 
           {/* Desktop Logo */}
           <img
-            src="/src/assets/top.png"
+            src="/assets/top.png"
             alt="HD Logo"
             className="hidden md:block absolute top-6 left-8 w-54 h-auto"
           />
@@ -192,7 +192,7 @@ const Login = () => {
       {/* Right image */}
       <div className="hidden md:flex w-1/2 items-center justify-center p-4">
         <img
-          src="/src/assets/auth-banner.png"
+          src="/assets/auth-banner.png"
           alt="Signup Visual"
           className="rounded-xl shadow-lg w-full max-w-[600px]"
         />

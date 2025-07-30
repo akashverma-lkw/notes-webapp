@@ -4,6 +4,7 @@ import { generateOTP } from "../utils/otpGenerator";
 import jwt from "jsonwebtoken";
 import { OAuth2Client } from "google-auth-library";
 import nodemailer from "nodemailer";
+import { AuthRequest } from "../middlewares/authMiddleware";
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
@@ -61,20 +62,24 @@ export const verifyOTP = async (req: Request, res: Response) => {
   return res.status(200).json({ message: "Login successful", token, user });
 };
 
-export const getMe = async (req, res) => {
+export const getMe = async (req: AuthRequest, res: Response) => {
   try {
-    // req.user is set by authMiddleware
+    if (!req.user || !req.user.id) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+
     const user = await User.findById(req.user.id).select("-password");
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
 
     res.status(200).json(user);
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error in getMe:", error.message);
     res.status(500).json({ error: "Server error" });
   }
 };
+
 
 export const googleLogin = async (req: Request, res: Response) => {
   const { credential } = req.body;

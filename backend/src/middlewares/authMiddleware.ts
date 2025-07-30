@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import User from "../models/User";
-import type { UserDocument } from '../models/User';
+import User, { UserDocument } from "../models/User";
 
 export interface AuthRequest extends Request {
   user?: UserDocument;
@@ -25,10 +24,10 @@ export const protect = async (
       const user = await User.findById(decoded.id).select("-password");
       if (!user) return res.status(401).json({ message: "User not found" });
 
-      req.user = { id: user._id.toString() };
+      req.user = user;
       next();
-    } catch (err) {
-      console.error("Auth error:", err);
+    } catch (err: any) {
+      console.error("Auth error:", err.message);
       res.status(401).json({ message: "Not authorized, token failed" });
     }
   } else {
